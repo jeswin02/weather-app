@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { Search, Loader2, Clock, Star, XCircle } from "lucide-react";
 import { useLocationSearch } from "@/hooks/use-weather";
-import { useSearchHistory } from "../hooks/use-search-history";
+import { useSearchHistory } from "@/hooks/use-search-history";
 import {
   Command,
   CommandDialog,

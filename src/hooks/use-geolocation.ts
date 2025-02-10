@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import type { Coordinates } from "@/api/types";
-import { useEffect, useState } from "react";
 
 interface GeolocationState {
   coordinates: Coordinates | null;
@@ -33,7 +33,6 @@ export function useGeolocation() {
             lat: position.coords.latitude,
             lon: position.coords.longitude,
           },
-
           error: null,
           isLoading: false,
         });
@@ -70,12 +69,13 @@ export function useGeolocation() {
     );
   };
 
+  // Get location on component mount
   useEffect(() => {
     getLocation();
   }, []);
 
   return {
     ...locationData,
-    getLocation,
+    getLocation, // Expose method to manually refresh location
   };
 }
